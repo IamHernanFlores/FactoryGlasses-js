@@ -730,3 +730,69 @@ html:not(.no-js) [data-aos=flip-up].aos-animate {
   border-radius: 10px;
 }
 
+/* ALERTS*/
+
+.swal-overlay--show-modal .swal-modal {
+  opacity: 1;
+  pointer-events: auto;
+  box-sizing: border-box;
+  -webkit-animation: showSweetAlert .3s;
+  animation: showSweetAlert .3s;
+  will-change: transform;
+  border-radius: 35px;
+  margin-left: -20px;
+}
+
+.swal-footer {
+  text-align: center;
+  padding-top: 13px;
+  margin-top: 13px;
+  padding: 13px 16px;
+  border-radius: inherit;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.swal-button {
+  background: rgb(131,58,180);
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%,
+   rgba(213,38,79,1) 52%, rgba(227,35,62,1) 68%, rgba(252,176,69,1) 97%);  color: #fff;
+  border: none;
+  box-shadow: none;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 24px;
+  margin: 0;
+  cursor: pointer;
+  
+}
+
+/* PARTE DE LAS ALERTAS*/
+.popup-class{
+	border-radius: 0;
+}
+.imagen1 {
+	max-width: 100%;
+    margin: 1.25em auto;
+	width: 200px;
+	border-radius: 20px;
+}
+.content-class {
+	padding: 0 20px  !important;
+}
+
+.swal2-container:not(.swal2-top):not(.swal2-top-start):not(.swal2-top-end):not(.swal2-top-left):not(.swal2-top-right):not(.swal2-center-start):not(.swal2-center-end):not(.swal2-center-left):not(.swal2-center-right):not(.swal2-bottom):not(.swal2-bottom-start):not(.swal2-bottom-end):not(.swal2-bottom-left):not(.swal2-bottom-right):not(.swal2-grow-fullscreen)>.swal2-modal {
+  margin: auto;
+  border-radius: 30px;
+}
+
+
+body.swal2-no-backdrop .swal2-container>.swal2-modal {
+  box-shadow: 0 0 10px rgb(0 0 0 / 40%);
+  border-radius: 30px;
+}
+
+
+
+/* TERMINA */

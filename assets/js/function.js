@@ -1,3 +1,6 @@
+
+
+
 function agregarCarrito(event) {
     swal("Ingrese cantidad de articulos 👓:", {
         content: {
@@ -32,7 +35,7 @@ function agregarCarrito(event) {
             swal({
                 title: "¿ Agregar productos al carrito ?",
                 text: `🛒 Agregar ${value} unidades al carrito ?`,
-                icon: "warning",
+                icon: "info",
                 buttons: ["Cancelar", "Si, agregar"],
             }).then((seguro) => {
                 if (seguro) {
@@ -102,7 +105,7 @@ function completarPago() {
     swal({
             title: "¿ Completar compra 🤓?",
             text: `Seguro comprar:\n${productosFormato}\nEl total es: $${Math.round(total)} ✅`,
-            icon: "warning",
+            icon: "info",
             buttons: true,
             dangerMode: true,
         })
