@@ -189,8 +189,8 @@ function contacto() {
     setTimeout("location.reload(true);", 0);
 }
 
-function setTalle(event) {
-    const idproducto = event.target.id.replace('talle-', '');
+function settipo(event) {
+    const idproducto = event.target.id.replace('tipo-', '');
     const selected = event.target.selectedOptions[0].innerHTML;
     let producto
     carro.carrito.forEach(element => {
@@ -198,7 +198,7 @@ function setTalle(event) {
             producto = element
         }
     });
-    carro.actualizarTalle(producto, selected);
+    carro.actualizartipo(producto, selected);
     localStorage.setItem('Carrito', JSON.stringify(carro.carrito));
 }
 
@@ -213,8 +213,8 @@ function mostrarProductoCarrito(producto) {
                         <h6><strong>${producto.nombre}</strong></h6>
                         <div class="product-specs">
                             <div class="precio"><span>Precio unidad:&nbsp;</span><span class="value">$${Math.round(producto.precio)}</span></div>
-                            <div class="talle"><span>Talle:&nbsp;</span>
-                                <select id="talle-${producto.id}" class='custom-select' onchange="setTalle(event)">
+                            <div class="tipo"><span>tipo:&nbsp;</span>
+                                <select id="tipo-${producto.id}" class='custom-select' onchange="settipo(event)">
                                     <optgroup label="Estuche ?">
                                     <option value="11" selected>Con funda para gafas de sol</option>
                                     <option value="12">Embalaje sin frustraciones (SIN ESTUCHE PARA EL SOL)</option>
@@ -288,7 +288,7 @@ function cargarProductos() {
     let prods = localStorage.getItem('Productos');
     prods = JSON.parse(prods);
     let producto = prods.map(value => {
-        return new Producto(value.id, value.nombre, value.precio, value.stock, value.cant_pedida, value.imagen, value.talle);
+        return new Producto(value.id, value.nombre, value.precio, value.stock, value.cant_pedida, value.imagen, value.tipo);
     });
     return producto
 }

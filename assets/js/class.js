@@ -1,12 +1,12 @@
 class Producto {
-    constructor(id, nombre, precio, stock, cant_pedida, imagen, talle) {
+    constructor(id, nombre, precio, stock, cant_pedida, imagen, tipo) {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
         this.stock = stock;
         this.imagen = imagen;
         this.cant_pedida = cant_pedida;
-        this.talle = talle;
+        this.tipo = tipo; // O talle 
     }
 
     actualizarCantidad(cant_nueva) {
@@ -23,8 +23,8 @@ class Producto {
         this.cant_pedida = 0;
     }
 
-    cambiarTalle(talle) {
-        this.talle = talle;
+    cambiartipo(tipo) {
+        this.tipo = tipo;
     }
 }
 
@@ -35,7 +35,7 @@ class Carrito {
             this.carrito = JSON.parse(infoCarrito);
             this.carrito = this.carrito.map(element => {
                 return new Producto(element.id, element.nombre, element.precio,
-                    element.stock, element.cant_pedida, element.imagen, element.talle);
+                    element.stock, element.cant_pedida, element.imagen, element.tipo);
             });
         } else {
             this.carrito = [];
@@ -129,12 +129,12 @@ class Carrito {
         });
         this.vaciarCarrito();
     }
-    actualizarTalle(producto, talle) {
+    actualizartipo(producto, tipo) {
         const encontro = this.carrito.find(element => {
             return producto.id === element.id;
         });
         if (encontro !== undefined) {
-            encontro.cambiarTalle(talle);
+            encontro.cambiartipo(tipo);
         }
     }
 }
